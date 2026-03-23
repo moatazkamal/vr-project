@@ -5,29 +5,21 @@ using UnityEngine.XR.Interaction.Toolkit.Interactors;
 
 public class XRGrabInteractableFixed : XRGrabInteractable
 {
+    [Header("Primary Attach Transforms")]
     [SerializeField] private Transform leftHandAttachTransform;
     [SerializeField] private Transform rightHandAttachTransform;
 
     protected override void OnSelectEntering(SelectEnterEventArgs args)
     {
-        base.OnSelectEntering(args);
-
-        // Get which hand is grabbing
         if (args.interactorObject.handedness == InteractorHandedness.Left)
         {
-            if (leftHandAttachTransform != null)
-            {
-                attachTransform.position = leftHandAttachTransform.position;
-                attachTransform.rotation = leftHandAttachTransform.rotation;
-            }
+            attachTransform = leftHandAttachTransform;
         }
-        else if (args.interactorObject.handedness == InteractorHandedness.Right)
+        else
         {
-            if (rightHandAttachTransform != null)
-            {
-                attachTransform.position = rightHandAttachTransform.position;
-                attachTransform.rotation = rightHandAttachTransform.rotation;
-            }
+            attachTransform = rightHandAttachTransform;
         }
+
+        base.OnSelectEntering(args);
     }
 }
