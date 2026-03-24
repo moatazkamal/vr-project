@@ -29,6 +29,15 @@ public class Projectile : MonoBehaviour
         }
     }
 
+    private void OnTriggerEnter(Collider other)
+{
+    if (other.CompareTag("Target"))
+    {
+        ScoreManager.Instance.AddScore();
+        Destroy(gameObject);
+    }
+}
+
     private void OnCollisionEnter(Collision collision)
     {
         // If the bullet hits the gun, ignore the collision
