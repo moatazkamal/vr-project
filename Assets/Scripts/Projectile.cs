@@ -30,23 +30,23 @@ public class Projectile : MonoBehaviour
     }
 
     private void OnTriggerEnter(Collider other)
-{
-    if (other.CompareTag("Target"))
     {
-        ScoreManager.Instance.AddScore();
-        Destroy(gameObject);
+        TargetHit targetHit = other.GetComponent<TargetHit>();
+
+        if (targetHit != null)
+        {
+            targetHit.RegisterHit();
+            Destroy(gameObject);
+        }
     }
-}
 
     private void OnCollisionEnter(Collision collision)
     {
-        // If the bullet hits the gun, ignore the collision
         if (collision.gameObject.CompareTag("Gun"))
         {
             return;
         }
 
-        // Destroy bullet for any other object
         Destroy(gameObject);
     }
 }

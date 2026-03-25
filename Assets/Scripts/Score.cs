@@ -3,22 +3,25 @@ using TMPro;
 
 public class ScoreManager : MonoBehaviour
 {
-    public static ScoreManager Instance { get; private set; }
-
     [SerializeField] private TextMeshProUGUI scoreText;
     private int score = 0;
 
-    private void Awake()
+    private void Start()
     {
-        if (Instance == null)
-            Instance = this;
-        else
-            Destroy(gameObject);
+        UpdateScoreUI();
     }
 
     public void AddScore(int amount = 1)
     {
         score += amount;
-        scoreText.text = score.ToString();
+        UpdateScoreUI();
+    }
+
+    private void UpdateScoreUI()
+    {
+        if (scoreText != null)
+        {
+            scoreText.text = score.ToString();
+        }
     }
 }
