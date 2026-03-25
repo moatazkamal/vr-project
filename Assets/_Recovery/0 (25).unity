@@ -2851,11 +2851,6 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 672071a2174953c4585c3eb456bd7a9b, type: 3}
   m_PrefabInstance: {fileID: 1858170510}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &453090809 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 4770280264457539341, guid: 6dd61e8ba2023744d87311a796719fb5, type: 3}
-  m_PrefabInstance: {fileID: 1311622949}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &458464660
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14720,9 +14715,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 938da9d6fe14c924c87fc7a44b8d9aca, type: 3}
       insertIndex: -1
       addedObject: {fileID: 2030521004}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 938da9d6fe14c924c87fc7a44b8d9aca, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 2030521006}
   m_SourcePrefab: {fileID: 100100000, guid: 938da9d6fe14c924c87fc7a44b8d9aca, type: 3}
 --- !u!1 &2030521003 stripped
 GameObject:
@@ -14755,23 +14747,6 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 938da9d6fe14c924c87fc7a44b8d9aca, type: 3}
   m_PrefabInstance: {fileID: 2030521002}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &2030521006
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2030521003}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6b4bff625be8fc6418c8a9253c9599fe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: Assembly-CSharp::SlidingDoor
-  player: {fileID: 453090809}
-  openDistance: 2
-  slideAmount: 1.5
-  slideSpeed: 2
-  slideDirection: {x: 1, y: 0, z: 0}
 --- !u!1001 &2067878205
 PrefabInstance:
   m_ObjectHideFlags: 0
