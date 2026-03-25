@@ -4,7 +4,11 @@ using TMPro;
 public class ScoreManager : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI scoreText;
+    [SerializeField] private SlidingDoor linkedDoor;
+    [SerializeField] private int requiredScoreToOpen = 5;
+
     private int score = 0;
+    private bool doorOpened = false;
 
     private void Start()
     {
@@ -15,6 +19,12 @@ public class ScoreManager : MonoBehaviour
     {
         score += amount;
         UpdateScoreUI();
+
+        if (!doorOpened && linkedDoor != null && score >= requiredScoreToOpen)
+        {
+            linkedDoor.OpenDoor();
+            doorOpened = true;
+        }
     }
 
     private void UpdateScoreUI()

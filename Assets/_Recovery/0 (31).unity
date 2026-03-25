@@ -1060,7 +1060,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::ScoreManager
   scoreText: {fileID: 855031319}
   linkedDoor: {fileID: 0}
-  requiredScoreToOpen: 20
+  requiredScoreToOpen: 5
 --- !u!114 &83404638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8546,7 +8546,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::ScoreManager
   scoreText: {fileID: 1766125273}
-  linkedDoor: {fileID: 2030521006}
+  linkedDoor: {fileID: 0}
   requiredScoreToOpen: 5
 --- !u!1 &1257110799
 GameObject:

@@ -2,11 +2,7 @@ using UnityEngine;
 
 public class SlidingDoor : MonoBehaviour
 {
-    [Header("Player Reference")]
-    [SerializeField] private Transform player;
-
     [Header("Door Settings")]
-    [SerializeField] private float openDistance = 2f;
     [SerializeField] private float slideAmount = 2f;
     [SerializeField] private float slideSpeed = 2f;
 
@@ -16,7 +12,6 @@ public class SlidingDoor : MonoBehaviour
     private Vector3 closedPosition;
     private Vector3 openPosition;
     private bool shouldOpen = false;
-    private bool hasOpened = false;
 
     private void Start()
     {
@@ -26,22 +21,6 @@ public class SlidingDoor : MonoBehaviour
 
     private void Update()
     {
-        if (player == null)
-        {
-            return;
-        }
-
-        if (!hasOpened)
-        {
-            float distance = Vector3.Distance(player.position, transform.position);
-
-            if (distance <= openDistance)
-            {
-                shouldOpen = true;
-                hasOpened = true;
-            }
-        }
-
         if (shouldOpen)
         {
             transform.position = Vector3.MoveTowards(
@@ -50,5 +29,10 @@ public class SlidingDoor : MonoBehaviour
                 slideSpeed * Time.deltaTime
             );
         }
+    }
+
+    public void OpenDoor()
+    {
+        shouldOpen = true;
     }
 }
